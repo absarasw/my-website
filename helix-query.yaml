@@ -49,7 +49,3 @@ indices:
         select: body img
         values: |
           attribute(el, 'src')
-      media-blocks:
-        select: body div:is([class="embed"],[class="image"],[class="video"])
-        values: |
-          textContent(el)
