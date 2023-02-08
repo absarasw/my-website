@@ -54,16 +54,31 @@ channel-manifest-new:
       - '/screens/**'
     target: '/screens/manifestnew'
     properties:
-      entries:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+      scripts:
         select: head > script[src]
         values: |
           attribute(el, 'src')
+      styles:
         select: head > link[rel="stylesheet"]
         values: |
           attribute(el, 'href')
+      assets:
         select: head > link[rel*="preload"]
         values: |
           attribute(el, 'href')
+      blocks:
+        select: body div[class]
+        values: |
+          attribute(el, 'className')
+      inline-images:
         select: body img
         values: |
           attribute(el, 'src')
