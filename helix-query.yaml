@@ -49,7 +49,7 @@ indices:
         select: body img
         values: |
           attribute(el, 'src')
-channel-manifest-new:
+  channel-manifest-new:
     include:
       - '/screens/**'
     target: '/screens/manifestnew'
