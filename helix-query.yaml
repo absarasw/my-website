@@ -25,19 +25,12 @@ indices:
         select: head > script[src]
         values: |
           attribute(el, 'src')
-      styles:
         select: head > link[rel="stylesheet"]
         values: |
           attribute(el, 'href')
-      assets:
         select: head > link[rel*="preload"]
         values: |
           attribute(el, 'href')
-      blocks:
-        select: body div[class]
-        values: |
-          attribute(el, 'className')
-      inline-images:
         select: body img
         values: |
           attribute(el, 'src')
