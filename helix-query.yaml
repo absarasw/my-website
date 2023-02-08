@@ -49,3 +49,21 @@ indices:
         select: body img
         values: |
           attribute(el, 'src')
+channel-manifest-new:
+    include:
+      - '/screens/**'
+    target: '/screens/manifestnew'
+    properties:
+      entries:
+        select: head > script[src]
+        values: |
+          attribute(el, 'src')
+        select: head > link[rel="stylesheet"]
+        values: |
+          attribute(el, 'href')
+        select: head > link[rel*="preload"]
+        values: |
+          attribute(el, 'href')
+        select: body img
+        values: |
+          attribute(el, 'src')
